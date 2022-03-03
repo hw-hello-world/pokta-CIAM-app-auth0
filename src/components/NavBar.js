@@ -26,6 +26,7 @@ const NavBar = () => {
     user,
     isAuthenticated,
     loginWithRedirect,
+    getIdTokenClaims,
     logout,
   } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
@@ -34,6 +35,10 @@ const NavBar = () => {
     logout({
       returnTo: window.location.origin,
     });
+
+  if(isAuthenticated) {
+    getIdTokenClaims().then(resp => console.log(resp));
+  }
 
   return (
     <div className="nav-container">

@@ -90,7 +90,7 @@ const NavBar = () => {
                     id="qsLoginBtn"
                     color="primary"
                     className="btn-margin"
-                    onClick={() => loginWithRedirect()}
+                    onClick={() => loginWithRedirect({consent:'prompt'})}
                   >
                     Log in
                   </Button>
